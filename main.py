@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import math
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
 
 
 while(1):
@@ -40,7 +40,7 @@ while(1):
 
 
     #find contours
-        _,contours,hierarchy= cv2.findContours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        contours,hierarchy = cv2.findContours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
    #find contour of max area(hand)
         cnt = max(contours, key = lambda x: cv2.contourArea(x))
